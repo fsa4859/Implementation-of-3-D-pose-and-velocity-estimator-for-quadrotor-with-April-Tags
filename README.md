@@ -13,7 +13,8 @@ This project involves the implementation of Planar Homography (Projective Transf
 
 ### Pose Estimation (Second Dataset)
 
-![image](https://user-images.githubusercontent.com/69100847/169549252-ed70dd4c-4ce5-4a2e-a876-da3ffd9582bf.png)
+![image](https://user-images.githubusercontent.com/69100847/169549672-d490f475-dd81-4c46-a238-d5eb064c6a1d.png)
+
 
 
 
