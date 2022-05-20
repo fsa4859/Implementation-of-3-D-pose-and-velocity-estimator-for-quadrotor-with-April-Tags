@@ -1,18 +1,6 @@
-function [position, orientation] = estimatePose(data, t)
-%% CHANGE THE NAME OF THE FUNCTION TO estimatePose
-% Please note that the coordinates for each corner of each AprilTag are
-% defined in the world frame, as per the information provided in the
-% handout. Ideally a call to the function getCorner with ids of all the
-% detected AprilTags should be made. This function should return the X and
-% Y coordinate of each corner, or each corner and the centre, of all the
-% detected AprilTags in the image. You can implement that anyway you want
-% as long as the correct output is received. A call to that function
-% should made from this function.
-% individual april tag
-% all april tags
+function [position, orientation, R_c2w] = estimatePose(data, t)
 imag_Cord=ones(3,4*length(data(t).id));
 Normalized_Image_Cord=ones(3,4*length(data(t).id));
-
 
 K=[311.0520, 0 201.8724;0 311.3885 113.6210;0 0 1];
 [world_Cord]=getCorner(data(t).id); % get all april tags.
@@ -67,7 +55,10 @@ t_hat_prime=H_L_prime(:,3);
 hat_matrix_prime=[R1_hat_prime,R2_hat_prime,cross(R1_hat_prime,R2_hat_prime)];
 [U5,S5,V5]=svd(hat_matrix_prime);
 R_prime=U5*[1 0 0;0 1 0;0 0 det(U5*V5)]*V5;
+R_c2w_new=R_prime;
 tra=t_hat_prime/norm(R1_hat_prime);
+
+R_c2w=horzcat(R_c2w_new,tra);
 
 
 Rbw=rot_Matrix_mod*R_prime;
