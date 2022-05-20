@@ -25,6 +25,16 @@ This project involves the implementation of Planar Homography (Projective Transf
 ![image](https://user-images.githubusercontent.com/69100847/169550466-aeb69432-1fd6-4721-b061-69968f3bc552.png)
 
 
+## RANSAC 
+
+### First Dataset
+
+![image](https://user-images.githubusercontent.com/69100847/169550624-b62b99ff-9d63-438e-a911-4578cfa08662.png)
+
+
+### Second Dataset
+
+![image](https://user-images.githubusercontent.com/69100847/169550680-7feb64b3-0c87-4ef6-bd56-90db9fddd2a3.png)
 
 
 
